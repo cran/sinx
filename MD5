@@ -1,0 +1,11 @@
+fffbac9a9f7050192998750a0e4db4ee *DESCRIPTION
+7a03782cd9cc6a634ee30921093c3a67 *NAMESPACE
+c2e3bce83a84bd37ebc07078ec46374b *R/cscx.R
+e6b6de84243ccb99b38bf60680e00ad9 *R/sinx.R
+047f2032fada7a69e58d6ab42f2d4b62 *inst/sinxs/sinxs.md
+5e6dc00492530700bce6acc01764df71 *inst/sinxs/tangshi.csv
+2c92106e31e7176f65998cf48563c2c7 *man/cscx.Rd
+2aacf3e36fd2a116bd0e9925c4b4cb6e *man/md2df.Rd
+0f9effab79cf6dcb0fda88746ec38525 *man/print.sinx.Rd
+f96d634d806e456c80f67f1545ddcda7 *man/read.sinxs.Rd
+575e0280bd556802b1314bbea49cec37 *man/sinx.Rd
