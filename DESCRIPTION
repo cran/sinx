@@ -1,12 +1,13 @@
 Package: sinx
-Version: 0.0.5
-Date: 2019-03-14
+Version: 0.0.11
+Date: 2019-05-01
 Title: Sino Xmen Said
 Authors@R: c(
     person("Peng", "Zhao", role = c("aut", "cre"), email = "pzhao@pzhao.net")
   )
 Maintainer: Peng Zhao <pzhao@pzhao.net>
-Imports: utils, cowsay, jsonlite, xaringan, pagedown, bookdownplus
+Imports: utils, cowsay, jsonlite, xaringan, pagedown, bookdownplus,
+        rosr, crayon, multicolor, rmsfact, clipr
 License: GPL-3
 Depends: R (>= 3.1.0)
 Suggests: knitr, rmarkdown
@@ -16,7 +17,8 @@ BugReports: https://github.com/pzhaonet/sinx/issues
 RoxygenNote: 6.1.1
 NeedsCompilation: no
 LazyData: true
-Packaged: 2019-03-19 10:31:44 UTC; Peng.Zhao
+VignetteBuilder: knitr
+Packaged: 2019-05-02 12:53:05 UTC; Peng.Zhao
 Author: Peng Zhao [aut, cre]
 Repository: CRAN
-Date/Publication: 2019-03-22 17:20:14 UTC
+Date/Publication: 2019-05-02 14:10:03 UTC

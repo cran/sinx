@@ -2,7 +2,7 @@
 % Please edit documentation in R/cscx.R
 \name{cscx}
 \alias{cscx}
-\title{Create a Skeleton for a new fortune}
+\title{Create a Skeleton in a Clipboard for a new sinX}
 \usage{
 cscx()
 }
@@ -10,7 +10,7 @@ cscx()
 a skeleton text for contributing to the database
 }
 \description{
-Create a Skeleton for a new fortune
+Create a Skeleton in a Clipboard for a new sinX
 }
 \examples{
 cscx()

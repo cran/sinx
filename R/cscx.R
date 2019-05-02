@@ -1,24 +1,29 @@
-#' Create a Skeleton for a new fortune
+#' Create a Skeleton in a Clipboard for a new sinX
 #'
 #' @return a skeleton text for contributing to the database
+#' @importFrom clipr clipr_available write_clip
 #' @export
 #'
 #' @examples
 #' cscx()
 cscx <- function() {
-    skeleton <-
-      c("",
-        "",
-        "author: ",
-        "",
-        "context: ",
-        "",
-        "source: ",
-        "",
-        "date:",
-        "",
-        "---")
-    cat(skeleton, sep = '\n')
+  skeleton <- c("",
+                "",
+                "author: ",
+                "",
+                "context: ",
+                "",
+                "source: ",
+                "",
+                "date:",
+                "",
+                "---")
+  if (clipr::clipr_available()) {
+    clipr::write_clip(skeleton)
+    message('Now you can paste the skeleton text to your text editor.')
+  } else {
+    message('Clipboard is unavailable.')
+  }
 }
 
 get_entry <- function(x) {

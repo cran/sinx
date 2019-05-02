@@ -11,7 +11,14 @@ read.sinxs(file = NULL, sep = ",", lib = "sinxs")
 
 \item{sep}{seperator of the columns. See '?read.table()'.}
 
-\item{lib}{library name of the sayings.}
+\item{lib}{library name of the sayings.
+- 'sinxs': (default) from cosx.org
+- 'tangshi'
+- 'songshi'
+- 'yangsheng'
+- 'chinese'
+- 'english'
+- 'jinyong'}
 }
 \value{
 a data frame of sayings, each row contains:
@@ -26,5 +33,13 @@ Read sayings from spread sheets.
 }
 \examples{
 libs <- read.sinxs()
-libs_ts <- read.sinxs(system.file("sinxs/tangshi.csv", package = "sinx"))
+
+libs <- read.sinxs(lib = "jinyong")
+
+libs <- read.sinxs(lib = c("tangshi", "songshi", "chinese", "yangsheng", "english", 
+    "jinyong"))
+
+path_f <- system.file("fortunes/fortunes.csv", package = "fortunes")
+path_s <- system.file("sinxs/sinxs.csv", package = "sinx")
+libs <- sinx::read.sinxs(c(path_f, path_s), sep = c(";", ","))
 }

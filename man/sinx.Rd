@@ -29,6 +29,17 @@ Sino Xmen's sayings the R community.
 \examples{
 sinx()
 
-libs_ts <- read.sinxs(system.file("sinxs/tangshi.csv", package = "sinx"))
-sinx(sinxs.data = libs_ts)
+for (i in 1:4) print(sinx(i))
+
+path_f <- system.file("fortunes/fortunes.csv", package = "fortunes")
+path_s <- system.file("sinxs/sinxs.csv", package = "sinx")
+ftns <- sinx::read.sinxs(c(path_f, path_s), sep = c(";", ","))
+sinx::sinx(sinxs.data = ftns)
+
+jinyong <- read.sinxs(lib = "jinyong")
+sinx(sinxs.data = jinyong)
+
+libs <- read.sinxs(lib = c("tangshi", "songshi", "chinese", "yangsheng", "english", 
+    "jinyong"))
+sinx(sinxs.data = libs)
 }

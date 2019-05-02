@@ -82,3 +82,65 @@ context: <https://d.cosx.org/d/9234-9234/3>
 source: d.cosx.org
 
 date: 2007-12
+
+---
+
+那我就不知道为什么了……
+
+author: yihui
+
+context: <https://d.cosx.org/d/420428/4>
+
+source: d.cosx.org
+
+date: 2019-01
+
+---
+
+你的 TeX 用的是什么发行版？中文模板需要很多额外的包。如果你装的是 tinytex 包和 TinyTeX 发行版，那就好办了，缺的包会自动装。如果你装的是别的发行版，例如 MiKTeX 或者 TeX Live 等，可能要手动安装一些包。发行版安装一个就够，不要同时安装多个。
+
+最后，如果还不行，可以试试 bookdown 的[官方中文模板](https://github.com/yihui/bookdown-chinese)。如果好用，那再考虑解决 bookdownplus 里的模板问题；否则就说明仍然是 bookdown 的环境没弄好，请运行下面的代码，看看结果是什么：
+
+```
+tinytex:::is_tinytex()
+tinytex:::tinytex_root()
+tinytex::tlmgr_update()
+Sys.which('pdflatex')
+system2('pdflatex', '--version')
+```
+
+或者看这里：<<https://yihui.name/tinytex/r/#debugging>>
+
+author: dapengde
+
+context: <https://d.cosx.org/d/419258>
+
+source: d.cosx.org
+
+date: 2019-02
+
+---
+
+看了你最近提出的一系列问题，我觉得大部分属于 R 语言的基本操作。只要通读一下基础的入门书，这些问题都会迎刃而解。否则，即使别人临时帮你解决了这些问题，后续仍然会问题不断。
+
+祝你好运。
+
+author: dapengde
+
+context: <https://d.cosx.org/d/420485/2>
+
+source: d.cosx.org
+
+date: 2019-02
+
+---
+
+八字箴言：遇到问题，先试升级。
+
+author: yihui
+
+context: https://d.cosx.org/d/419135/23
+
+source: d.cosx.org
+
+date: 2016-06-09
