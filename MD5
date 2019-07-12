@@ -1,9 +1,9 @@
-2e34fde870d8db4f9b216a11e61f48ea *DESCRIPTION
-2da4577a98b298ea2f2c106f555d07f1 *NAMESPACE
+3c2e1674a12eec85e64bf7b51645a6ca *DESCRIPTION
+dc2b2252489d99f6322abfcb244e9a30 *NAMESPACE
 68b658a6d1c450441cbc7963e2c5dfab *R/cscx.R
 8d935a6d7b15ba499673e7e8eb9cff00 *R/secx.R
-9906dc23774d5c1cd7c2d641bbee7b7c *R/sinx.R
-fb5a6faca16a3da707347ee2c28b2f5b *R/tanx.R
+62bf4d30a3824b1790588f46eba8b8b3 *R/sinx.R
+77785d1c5cbba759e98f2b6e8947529a *R/tanx.R
 3134c7afcca96e63d812734a71ff5143 *build/vignette.rds
 80ae0b3699c55e5afc7935634e9b28ca *inst/doc/sinx.R
 16e1a55009cc1139fd219e05366c379a *inst/doc/sinx.Rmd
@@ -17,7 +17,6 @@ bbaa64fb02ec18b85acfee5fb0e64a4d *inst/sinxs/jinyong.csv
 f391f0bc22482216eb48235cdff7c9f2 *inst/sinxs/tangshi.csv
 449e8873ac91efc467b52dc84f5f905a *inst/sinxs/yangsheng.csv
 41b1ae80d024c4722f9b9b7748f9bc71 *man/cscx.Rd
-510bf1cf7c91ba90a4a43aacb5d3d75c *man/ctanx.Rd
 2aacf3e36fd2a116bd0e9925c4b4cb6e *man/md2df.Rd
 0f9effab79cf6dcb0fda88746ec38525 *man/print.sinx.Rd
 b41606f499d908e3fe90d7851f3cfbd5 *man/read.sinxs.Rd

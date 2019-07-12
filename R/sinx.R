@@ -229,97 +229,32 @@ print.sinx <- function(x, ...)
 }
 
 
-#' Create TANX when starting R
-#'
-#' @param method (character) add or remove `sinx::tanx()` in ~/.Rprofile
-#' @param lib library name of the sayings.See `?read.sinxs()`.
-#'
-#' @return a new ~/.Rprofile
-#' @export
-#'
-#' @examples
-#' ctanx()
-#' ctanx(lib = 'jinyong')
-#' ctanx('remove')
-ctanx <- function(method = c('add', 'remove'),
-                  lib = 'sinxs') {
-  method <- match.arg(method)
-  homedir <- Sys.getenv('HOME')
-  newcode <-
-    paste0('sinx::tanx(sinxs.data = sinx::read.sinxs(lib = "', lib, '"))')
-  newfile <- file.path(homedir, '.Rprofile')
-  if (method == 'add')
-    write(newcode, newfile, append = T)
-  if (method == 'remove') {
-    if (file.exists(newfile)) {
-      oldtext <- readLines(newfile, encoding = 'UTF-8')
-      newtext <- gsub('^sinx::tanx\\(.*\\)$', '', oldtext)
-      writeLines(newtext, newfile, useBytes = TRUE)
-    }
-  }
-}
-
-merge_text <-
-  function(sinxs.data = NULL,
-           method = c('console', 'vig')) {
-    method <- match.arg(method)
-    if (is.null(sinxs.data)) {
-      sinxs.data <- read.sinxs(lib = 'sinxs')
-    }
-    sinxs.data$quote <- gsub('\\\\n', '\n',  sinxs.data$quote)
-
-    os <- Sys.info()['sysname']
-    if (os == 'Windows') {
-      old_loc <- Sys.getlocale("LC_CTYPE")
-      on.exit(Sys.setlocale("LC_CTYPE", old_loc))
-      Sys.setlocale("LC_CTYPE", "Chinese")
-    }
-    n <- nrow(sinxs.data)
-    sinxs.data$n <- 1:n
-
-    sinxs.data$context <- ifelse(sinxs.data$context != '',
-                                 paste0(' (', sinxs.data$context, ')'),
-                                 '')
-    sinxs.data$source <- ifelse(sinxs.data$source != '',
-                              paste0(', ', sinxs.data$source),
-                              '')
-    sinxs.data$date <- ifelse(sinxs.data$date != '',
-                              paste0(', ', sinxs.data$date),
-                              '')
-    if (method == 'vig') {
-      sinxs.data$sep <-
-        apply(sinxs.data[, c('author', 'context', 'source', 'date')], 1, function(x)
-          ifelse(any(unlist(x) != ''), '\n\n--- ', ''))
-      sinxs.data$vig <-
-        paste(
-          paste0('### ', sinxs.data$n),
-          sinxs.data$quote,
-          paste0(
-            sinxs.data$sep,
-            sinxs.data$author,
-            sinxs.data$context,
-            sinxs.data$source,
-            sinxs.data$date
-          ),
-          sep = '\n\n'
-        )
-    }
-    if (method == 'console') {
-      sinxs.data$sep <-
-        apply(sinxs.data[, c('author', 'context', 'source', 'date')], 1, function(x)
-          ifelse(any(unlist(x) != ''), '\n--- ', ''))
-      sinxs.data$vig <-
-        paste(
-          sinxs.data$quote,
-          paste0(
-            sinxs.data$sep,
-            sinxs.data$author,
-            sinxs.data$context,
-            sinxs.data$source,
-            sinxs.data$date
-          ),
-          sep = '\n'
-        )
-    }
-    return(sinxs.data)
-  }
+#' #' Create TANX when starting R
+#' #'
+#' #' @param method (character) add or remove `sinx::tanx()` in ~/.Rprofile
+#' #' @param lib library name of the sayings.See `?read.sinxs()`.
+#' #'
+#' #' @return a new ~/.Rprofile
+#' #' @export
+#' #'
+#' #' @examples
+#' #' ctanx()
+#' #' ctanx(lib = 'jinyong')
+#' #' ctanx('remove')
+#' ctanx <- function(method = c('add', 'remove'),
+#'                   lib = 'sinxs') {
+#'   method <- match.arg(method)
+#'   homedir <- Sys.getenv('HOME')
+#'   newcode <-
+#'     paste0('sinx::tanx(sinxs.data = sinx::read.sinxs(lib = "', lib, '"))')
+#'   newfile <- file.path(homedir, '.Rprofile')
+#'   if (method == 'add')
+#'     write(newcode, newfile, append = T)
+#'   if (method == 'remove') {
+#'     if (file.exists(newfile)) {
+#'       oldtext <- readLines(newfile, encoding = 'UTF-8')
+#'       newtext <- gsub('^sinx::tanx\\(.*\\)$', '', oldtext)
+#'       writeLines(newtext, newfile, useBytes = TRUE)
+#'     }
+#'   }
+#' }

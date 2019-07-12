@@ -1,3 +1,68 @@
+merge_text <-
+  function(sinxs.data = NULL,
+           method = c('console', 'vig')) {
+    method <- match.arg(method)
+    if (is.null(sinxs.data)) {
+      sinxs.data <- read.sinxs(lib = 'sinxs')
+    }
+    sinxs.data$quote <- gsub('\\\\n', '\n',  sinxs.data$quote)
+
+    os <- Sys.info()['sysname']
+    if (os == 'Windows') {
+      old_loc <- Sys.getlocale("LC_CTYPE")
+      on.exit(Sys.setlocale("LC_CTYPE", old_loc))
+      Sys.setlocale("LC_CTYPE", "Chinese")
+    }
+    n <- nrow(sinxs.data)
+    sinxs.data$n <- 1:n
+
+    sinxs.data$context <- ifelse(sinxs.data$context != '',
+                                 paste0(' (', sinxs.data$context, ')'),
+                                 '')
+    sinxs.data$source <- ifelse(sinxs.data$source != '',
+                                paste0(', ', sinxs.data$source),
+                                '')
+    sinxs.data$date <- ifelse(sinxs.data$date != '',
+                              paste0(', ', sinxs.data$date),
+                              '')
+    if (method == 'vig') {
+      sinxs.data$sep <-
+        apply(sinxs.data[, c('author', 'context', 'source', 'date')], 1, function(x)
+          ifelse(any(unlist(x) != ''), '\n\n--- ', ''))
+      sinxs.data$vig <-
+        paste(
+          paste0('### ', sinxs.data$n),
+          sinxs.data$quote,
+          paste0(
+            sinxs.data$sep,
+            sinxs.data$author,
+            sinxs.data$context,
+            sinxs.data$source,
+            sinxs.data$date
+          ),
+          sep = '\n\n'
+        )
+    }
+    if (method == 'console') {
+      sinxs.data$sep <-
+        apply(sinxs.data[, c('author', 'context', 'source', 'date')], 1, function(x)
+          ifelse(any(unlist(x) != ''), '\n--- ', ''))
+      sinxs.data$vig <-
+        paste(
+          sinxs.data$quote,
+          paste0(
+            sinxs.data$sep,
+            sinxs.data$author,
+            sinxs.data$context,
+            sinxs.data$source,
+            sinxs.data$date
+          ),
+          sep = '\n'
+        )
+    }
+    return(sinxs.data)
+  }
+
 #' TAlked by SiNo Xmen's Pets
 #'
 #' @import cowsay

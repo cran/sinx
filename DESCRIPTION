@@ -1,6 +1,6 @@
 Package: sinx
-Version: 0.0.11
-Date: 2019-05-01
+Version: 0.0.12
+Date: 2019-07-12
 Title: Sino Xmen Said
 Authors@R: c(
     person("Peng", "Zhao", role = c("aut", "cre"), email = "pzhao@pzhao.net")
@@ -18,7 +18,7 @@ RoxygenNote: 6.1.1
 NeedsCompilation: no
 LazyData: true
 VignetteBuilder: knitr
-Packaged: 2019-05-02 12:53:05 UTC; Peng.Zhao
+Packaged: 2019-07-12 08:14:03 UTC; Peng.Zhao
 Author: Peng Zhao [aut, cre]
 Repository: CRAN
-Date/Publication: 2019-05-02 14:10:03 UTC
+Date/Publication: 2019-07-12 09:12:40 UTC

@@ -2,7 +2,6 @@
 
 S3method(print,sinx)
 export(cscx)
-export(ctanx)
 export(read.sinxs)
 export(secx)
 export(sinx)
