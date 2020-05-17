@@ -4,8 +4,14 @@
 \alias{sinx}
 \title{Sino Xmen's sayings the R community.}
 \usage{
-sinx(which = NULL, sinxs.data = NULL, fixed = TRUE, showMatches = FALSE, 
-    author = character(), ...)
+sinx(
+  which = NULL,
+  sinxs.data = NULL,
+  fixed = TRUE,
+  showMatches = FALSE,
+  author = character(),
+  ...
+)
 }
 \arguments{
 \item{which}{an integer specifying the row number of `sinxs.data`. Alternatively `which`` can be a character and `grep`` is used to try to find a suitable row.}

@@ -4,9 +4,17 @@
 \alias{tanx}
 \title{TAlked by SiNo Xmen's Pets}
 \usage{
-tanx(which = NULL, sinxs.data = NULL, what = "Hello world!", by = "random", 
-    type = "message", what_color = "steelblue3", by_color = NULL, length = 18, 
-    ...)
+tanx(
+  which = NULL,
+  sinxs.data = NULL,
+  what = "Hello world!",
+  by = "random",
+  type = "message",
+  what_color = "steelblue3",
+  by_color = NULL,
+  length = 18,
+  ...
+)
 }
 \arguments{
 \item{which}{An integer specifying the row number of sinxs.data.

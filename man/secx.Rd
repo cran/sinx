@@ -4,9 +4,18 @@
 \alias{secx}
 \title{Create a book/slides from a sinx library}
 \usage{
-secx(lib = "tangshi", file = NULL, title = "A Sinx Book", author = "dapeng", 
-    section = "author", subsection = "context", style = c("pagedown", "bookdown", 
-        "xaringan"), bookdown_template = "demo_zh", to = "sinx_book", if_render = TRUE)
+secx(
+  lib = "tangshi",
+  file = NULL,
+  title = "A Sinx Book",
+  author = "dapeng",
+  section = "author",
+  subsection = "context",
+  style = c("pagedown", "bookdown", "xaringan"),
+  bookdown_template = "demo_zh",
+  to = "sinx_book",
+  if_render = TRUE
+)
 }
 \arguments{
 \item{lib}{library name of the sayings. See `?read.sinxs`.}
